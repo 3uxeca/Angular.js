@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>AngularJS Sample</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <style>
+        #rect { background-color: red; position: absolute; }
+    </style>
+</head>
+<body ng-init="num = 100; x = 300; y = 100;  w = 100; h = 100">
+     <div>
+        <p>input:<input type="text" ng-model="msg"></p>
+        <p>you typed: {{msg}}.</p>
+    </div>
+    <div>
+        <p>price:<input type="text" ng-model="num"></p>
+    <p style="font-weight:{{(num >= 10000) * 700}}">
+        you typed: {{num * 1.08}}.</p>
+    </div>
+     <div>
+        x:<input type="number" min="0" max="300" ng-model="x" size="5">
+        y:<input type="number" min="0" max="300" ng-model="y" size="5">
+        w:<input type="number" min="0" max="300" ng-model="w" size="5">
+        h:<input type="number" min="0" max="300" ng-model="h" size="5">
+    </div>
+    <div id="rect" style="left:{{x}}px;top:{{y}}px;width:{{w}}px;height:{{h}}px"></div>
+</body>
+</html>
