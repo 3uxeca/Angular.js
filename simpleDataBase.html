@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS simple Data Base</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+    <script src="script.js"></script>
+    <style>
+        body { color: gray }
+        h1 { font-size: 18pt; font-weight: bold; }
+        span.label { display:inline-block; width: 50px; color: red; }
+        input { width: 100px; }
+        .msg { font-size: 14pt; font-weight: bold; color: gray; } 
+    </style>
+</head>
+<body ng-app="myapp2" ng-init="num=0">
+    <h1>* 데이터 표시 *</h1>
+    <p>ID번호를 입력해 주세요</p>
+    <div ng-controller="HelloController2 as ctl">
+        <div class="input">
+            <span class="label">ID : </span>
+            <input type="text" ng-model="num">
+            <button ng-click="ctl.doAction(num)">click</button>
+        </div>
+        <p class="msg">{{ctl.getData()}}</p>
+    </div>
+</body> 
+</html>

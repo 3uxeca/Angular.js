@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS Sample</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+    <script src="script.js"></script>
+    <style>
+        body { color: gray; }
+        h1 { font-size: 18pt; font-weight: bold; }
+        span.label { display: inline-block; width: 50px; color: red; }
+        input { width: 100px; }
+        .msg { font-size: 14pt; font-weight: bold; color: gray; }
+    </style>
+</head>
+<body ng-app="myapp" ng-init="num = 1000">
+    <h1>* 세금 계산 *</h1>
+    <p>금액을 입력해주세요</p>
+    <div ng-controller="HelloController as ctl">
+        <div class="input">
+            <span class="label">tax : </span>
+            <input type="text" ng-model="ctl.tax">%
+        </div>
+        <div class="input">
+            <span class="label">price : </span>
+            <input type="text" ng-model="num">원
+        </div>
+        <p class="msg">세금 포함 : {{ctl.calcWithTax(num)}}원</p>
+        <p class="msg">부가세 제외 : {{ctl.calcWithoutTax(num)}}원</p>
+    </div>
+</body>
+</html>
